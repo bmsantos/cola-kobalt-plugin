@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class BaseTest {
 
-    @IdeEnabler
+    //@IdeEnabler
     @Test
     public void toBeRemoved() {
         err.println("COLA Tests: this test will not execute.");

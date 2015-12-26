@@ -29,6 +29,7 @@ val p = javaProject {
     dependenciesTest {
         compile("junit:junit:4.11")
         compile("com.github.bmsantos:cola-tests:0.5.0")
+        compile("org.slf4j:slf4j-simple:1.7.7")
     }
 
     assemble {
