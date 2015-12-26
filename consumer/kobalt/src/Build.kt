@@ -36,11 +36,7 @@ val p = javaProject {
         }
     }
 
-    javaCompiler {
-        args("", "1.8")
-    }
-
     test {
-        jvmArgs("-javaagent:${home}/.m2/repository/com/github/bmsantos/cola-tests/0.5.0/cola-tests-0.5.0.jar")
+        jvmArgs("-javaagent:" + homeDir(".m2/repository/com/github/bmsantos/cola-tests/0.5.0/cola-tests-0.5.0.jar"))
     }
 }
