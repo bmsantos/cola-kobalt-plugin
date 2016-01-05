@@ -6,8 +6,7 @@ import com.github.bmsantos.core.cola.story.annotations.IdeEnabler;
 import org.junit.Test;
 
 public class BaseTest {
-
-    //@IdeEnabler
+    @IdeEnabler
     @Test
     public void toBeRemoved() {
         err.println("COLA Tests: this test will not execute.");

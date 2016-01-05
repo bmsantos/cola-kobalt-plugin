@@ -5,7 +5,7 @@ import com.beust.kobalt.plugin.java.*
 val repos = repos()
 
 
-val p = javaProject {
+val javaProject = javaProject {
 
     name = "konsumer"
     group = "com.github.bmsantos"
@@ -23,7 +23,6 @@ val p = javaProject {
     }
 
     dependencies {
-//        compile("com.beust:jcommander:1.48")
     }
 
     dependenciesTest {
@@ -39,5 +38,6 @@ val p = javaProject {
 
     test {
         jvmArgs("-javaagent:" + homeDir(".m2/repository/com/github/bmsantos/cola-tests/0.5.0/cola-tests-0.5.0.jar"))
+        excludes("**/BaseTest.class")
     }
 }
