@@ -1,0 +1,6 @@
+<kobalt-plugin>
+    <name>cola-kobalt-plugin</name>
+    <plugin-actors>
+        <class-name>com.github.bmsantos.cola.kobalt.plugin.ColaTestsPlugin</class-name>
+    </plugin-actors>
+</kobalt-plugin>
