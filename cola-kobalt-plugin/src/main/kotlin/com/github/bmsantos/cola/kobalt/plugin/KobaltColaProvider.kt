@@ -1,13 +1,14 @@
 package com.github.bmsantos.cola.kobalt.plugin
 
-import com.beust.kobalt.misc.log
 import com.github.bmsantos.core.cola.provider.IColaProvider
 import org.codehaus.plexus.util.DirectoryScanner
 import java.io.File
 import java.net.URL
 import java.net.URLClassLoader
-import java.util.*
-import kotlin.collections.*
+import kotlin.collections.arrayListOf
+import kotlin.collections.forEach
+import kotlin.collections.toArrayList
+import kotlin.collections.toTypedArray
 
 public class KobaltColaProvider(val targetDir: String, val classpathElements: List<String>,
                                 val includes: List<String>, val excludes: List<String>) : IColaProvider {
@@ -17,12 +18,9 @@ public class KobaltColaProvider(val targetDir: String, val classpathElements: Li
     }
 
     override fun getTargetClassLoader(): URLClassLoader? {
-        val urls = ArrayList<URL>()
+        val urls = arrayListOf<URL>()
 
-        classpathElements.forEach {
-            log(2, "*** Classpath Element: " + File(it).toURI().toURL())
-            urls.add(File(it).toURI().toURL())
-        }
+        classpathElements.forEach { urls.add(File(it).toURI().toURL()) }
 
         return URLClassLoader(urls.toTypedArray(), KobaltColaProvider::class.java.classLoader)
     }
