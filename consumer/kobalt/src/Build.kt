@@ -2,8 +2,8 @@ import com.beust.kobalt.*
 import com.beust.kobalt.plugin.packaging.assemble
 import com.beust.kobalt.plugin.java.*
 
-val repos = repos()
-
+val repos = repos("https://dl.bintray.com/bmsantos/maven/")
+val plugins = plugins("com.github.bmsantos:cola-kobalt-plugin:0.5.0")
 
 val javaProject = javaProject {
 
@@ -37,7 +37,7 @@ val javaProject = javaProject {
     }
 
     test {
-        jvmArgs("-javaagent:" + homeDir(".m2/repository/com/github/bmsantos/cola-tests/0.5.0/cola-tests-0.5.0.jar"))
+        //jvmArgs("-javaagent:" + homeDir(".m2/repository/com/github/bmsantos/cola-tests/0.5.0/cola-tests-0.5.0.jar"))
         excludes("**/BaseTest.class")
     }
 }
